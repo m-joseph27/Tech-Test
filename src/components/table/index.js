@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Input, Button, Modal, Form, InputNumber } from 'antd';
+import { Table, Input, Button, Modal, Form, InputNumber, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
 const { Search } = Input;
@@ -26,21 +26,18 @@ const TableComponent = ({ columns, initialData }) => {
   };
 
   const handleAdd = () => {
-    console.log('form', form.getFieldError());
-    if (form.getFieldsError()) {
-      return false
-    } else {
-      form.validateFields().then(values => {
-        setDataSource([...dataSource, values]);
-        form.resetFields();
-        setIsModalVisible(false);
-      });
-    }
+    form.validateFields().then(values => {
+      setDataSource([...dataSource, values]);
+      form.resetFields();
+      setIsModalVisible(false);
+      message.success('Berhasil Menambahkan Data');
+    });
   };
 
   const handleDelete = (key) => {
-      const newData = dataSource.filter((item) => item.key !== key);
-      setDataSource(newData);
+    const newData = dataSource.filter((item) => item.key !== key);
+    setDataSource(newData);
+    message.success('Berhasil Menghapus Data');
   };
 
   const filteredData = dataSource.filter(item =>

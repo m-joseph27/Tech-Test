@@ -55,7 +55,7 @@ const TableComponent = ({ columns, initialData }) => {
           title: 'Action',
           key: 'action',
           render: (text, record) => (
-              <Button onClick={() => handleDelete(record.key)}>Delete</Button>
+              <Button danger onClick={() => handleDelete(record.key)}>Delete</Button>
           ),
       },
   ];

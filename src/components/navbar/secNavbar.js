@@ -17,7 +17,7 @@ import React from 'react';
 // Assets
 import { MdNotificationsNone } from 'react-icons/md';
 import routes from '../../routes';
-import { ColorModeSwitcher } from '../theme/ColorModeSwitcher';
+import { ColorModeSwitcher } from '../../theme/ColorModeSwitcher';
 import { SearchBar } from '../searchBar';
 import { SidebarResponsive } from '../sidebar';
 

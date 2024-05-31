@@ -5,6 +5,7 @@ import {
   MdPieChart,
   MdHome,
 } from "react-icons/md";
+import TableComponent from "./views/tables/tableComponent";
 
 const routes = [
   {
@@ -19,7 +20,7 @@ const routes = [
     path: "/data-table",
     layout: "/admin",
     icon: <Icon as={MdPieChart} width='20px' height='20px' color='inherit' />,
-    // component: MainDashboard,
+    component: TableComponent
   }
 ];
 

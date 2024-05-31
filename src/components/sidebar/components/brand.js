@@ -1,10 +1,8 @@
 import React from "react";
-import { Flex, useColorModeValue } from "@chakra-ui/react";
-import { HorizonLogo } from "../../icons/index";
+import { Flex } from "@chakra-ui/react";
 import { HSeparator } from "../../separator/index";
 
 export function SidebarBrand() {
-  let logoColor = useColorModeValue("navy.700", "blue");
 
   return (
     <Flex align='center' direction='column'>

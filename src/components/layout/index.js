@@ -1,18 +1,23 @@
-import { Portal, Box } from '@chakra-ui/react';
+import { Portal, Box, useDisclosure } from '@chakra-ui/react';
 
 import { SidebarContext } from '../../context/sidebarConext';
 import Sidebar from '../sidebar/index';
 import React, { useState } from 'react';
 import routes from '../../routes';
+import Navbar from '../navbar/navbar';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 export default function Layout(props) {
   const { ...rest } = props;
-	console.log('rest', props);
 	// states and functions
 	const [ fixed ] = useState(false);
 	const [ toggleSidebar, setToggleSidebar ] = useState(false);
 
-  // const { onOpen } = useDisclosure();
+  const { onOpen } = useDisclosure();
+
+	const getRoute = () => {
+		return window.location.pathname !== '/admin/full-screen-maps';
+	};
 
   const getActiveRoute = (routes) => {
 		let activeRoute = 'Default Brand Text';
@@ -80,6 +85,22 @@ export default function Layout(props) {
 		return activeNavbar;
 	};
 
+	const getRoutes = (routes) => {
+		return routes.map((prop, key) => {
+			if (prop.layout === '/admin') {
+				return <Route path={prop.layout + prop.path} component={prop.component} key={key} />;
+			}
+			if (prop.collapse) {
+				return getRoutes(prop.items);
+			}
+			if (prop.category) {
+				return getRoutes(prop.items);
+			} else {
+				return null;
+			}
+		});
+	};
+
   return (
     <Box>
       <Box>
@@ -105,7 +126,7 @@ export default function Layout(props) {
 						transitionTimingFunction='linear, linear, ease'>
 						<Portal>
 							<Box>
-								{/* <Navbar
+								<Navbar
 									onOpen={onOpen}
 									logoText={'Horizon UI Dashboard PRO'}
 									brandText={getActiveRoute(routes)}
@@ -113,9 +134,18 @@ export default function Layout(props) {
 									message={getActiveNavbarText(routes)}
 									fixed={fixed}
 									{...rest}
-								/> */}
+								/>
 							</Box>
 						</Portal>
+
+						{getRoute() ? (
+							<Box mx='auto' p={{ base: '20px', md: '30px' }} pe='20px' minH='100vh' pt='50px'>
+								<Switch>
+									{getRoutes(routes)}
+									<Redirect from='/' to='/admin' />
+								</Switch>
+							</Box>
+						) : null}
 					</Box>
         </SidebarContext.Provider>
       </Box>

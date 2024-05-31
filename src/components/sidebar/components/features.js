@@ -6,16 +6,16 @@ export default function Features(props) {
   let location = useLocation();
   let activeColor = useColorModeValue("gray.700", "white");
   let inactiveColor = useColorModeValue(
-    "secondaryGray.600",
-    "secondaryGray.600"
+    "gray.600",
+    "gray.600"
   );
-  let activeIcon = useColorModeValue("brand.500", "white");
-  let textColor = useColorModeValue("secondaryGray.500", "white");
-  let brandColor = useColorModeValue("brand.500", "brand.400");
+
+  let activeIcon = useColorModeValue("orange.500", "white");
+  let textColor = useColorModeValue("gray.500", "white");
+  let brandColor = useColorModeValue("orange.500", "brand.400");
 
   const { routes } = props;
 
-  console.log('props', props);
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return location.pathname.includes(routeName);
@@ -23,9 +23,8 @@ export default function Features(props) {
 
   const createLinks = (routes) => {
     return routes.map((route, index) => {
-      console.log('route cat', route);
       return (
-        <NavLink key={index} to={route.path}>
+        <NavLink key={index} to={route.layout + route.path}>
           {route.icon ? (
             <Box>
               <HStack
@@ -55,7 +54,13 @@ export default function Features(props) {
                       activeRoute(route.path.toLowerCase())
                         ? "bold"
                         : "normal"
-                    }>
+                    }
+                    fontSize={
+                      activeRoute(route.path.toLowerCase())
+                        ? "14px"
+                        : "13px"
+                    }
+                  >
                     {route.name}
                   </Text>
                 </Flex>
@@ -75,7 +80,7 @@ export default function Features(props) {
             <Box>
               <HStack
                 spacing={
-                  activeRoute(route.path.toLowerCase()) ? "22px" : "26px"
+                  activeRoute(route.path.toLowerCase()) ? "20px" : "24px"
                 }
                 py='5px'
                 ps='10px'>
@@ -91,7 +96,7 @@ export default function Features(props) {
                   }>
                   {route.name}
                 </Text>
-                <Box h='36px' w='4px' bg='brand.400' borderRadius='5px' />
+                {/* <Box h='36px' w='4px' bg='brand.400' borderRadius='5px' /> */}
               </HStack>
             </Box>
           )}

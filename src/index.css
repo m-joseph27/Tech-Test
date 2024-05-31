@@ -3,3 +3,12 @@
 body {
   font-family: "DM Sans", sans-serif;
 }
+
+.text-logo {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 54px;
+  margin-bottom: 10px;
+  color: #FFB546;
+  text-shadow: -4px 5px 6px rgba(169,155,155,0.6);
+}

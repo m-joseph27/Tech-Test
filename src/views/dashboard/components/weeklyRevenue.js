@@ -36,7 +36,7 @@ export default function WeeklyRevenue(props) {
     <Card
       align='center'
       direction='column'
-      bg={colorMode === 'dark' ? '#272829' : '#FFFF'}
+      bg={colorMode === 'dark' ? '#0F0F0F' : '#FFFF'}
       borderRadius='15px'
       p='20px'
       w='100%'

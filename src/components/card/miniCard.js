@@ -18,7 +18,7 @@ export default function MiniCard(props) {
 
   return (
     <Card p='15px'
-      bg={colorMode === 'dark' ? '#272829' : '#FFFF'}
+      bg={colorMode === 'dark' ? '#0F0F0F' : '#FFFF'}
       borderRadius='15px'>
       <Flex
         my='auto'

@@ -18,7 +18,7 @@ export default function CalenderComponent(props) {
       w='100%'
       maxW='max-content'
       p='20px 15px'
-      bg={colorMode === 'dark' ? '#272829' : '#FFFF'}
+      bg={colorMode === 'dark' ? '#0F0F0F' : '#FFFF'}
       borderRadius='15px'
       {...rest}>
       <Calendar

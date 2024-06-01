@@ -11,6 +11,7 @@ import {
   useDisclosure,
   DrawerContent,
   DrawerCloseButton,
+  useColorMode,
 } from "@chakra-ui/react";
 import SidebarContent from "./components/content";
 import {
@@ -59,18 +60,15 @@ function Sidebar(props) {
   );
 }
 
-// FUNCTIONS
 export function SidebarResponsive(props) {
-  let sidebarBackgroundColor = useColorModeValue("white", "navy.800");
+  const { colorMode } = useColorMode();
+  let sidebarBackgroundColor = useColorModeValue("blue", "navy.800");
   let menuColor = useColorModeValue("gray.400", "white");
-  // // SIDEBAR
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
   const { routes } = props;
-  // let isWindows = navigator.platform.startsWith("Win");
-  //  BRAND
-
   return (
     <Flex display={{ sm: "flex", xl: "none" }} alignItems='center'>
       <Flex ref={btnRef} w='max-content' h='max-content' onClick={onOpen}>
@@ -90,7 +88,7 @@ export function SidebarResponsive(props) {
         placement={'right'}
         finalFocusRef={btnRef}>
         <DrawerOverlay />
-        <DrawerContent w='285px' maxW='285px' bg={sidebarBackgroundColor}>
+        <DrawerContent w='285px' maxW='285px' bg={colorMode === 'dark' ? '#0F0F0F' : '#FFFF'}>
           <DrawerCloseButton
             zIndex='3'
             onClose={onClose}

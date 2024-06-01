@@ -27,7 +27,7 @@ export default function DailyTraffic(props) {
       align='center'
       direction='column'
       w='100%'
-      bg={colorMode === 'dark' ? '#272829' : '#FFFF'}
+      bg={colorMode === 'dark' ? '#0F0F0F' : '#FFFF'}
       borderRadius='15px'
       p='20px'
       {...rest}>

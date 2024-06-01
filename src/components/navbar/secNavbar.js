@@ -1,4 +1,3 @@
-// Chakra Imports
 import {
 	Avatar,
 	Flex,
@@ -8,22 +7,24 @@ import {
 	MenuItem,
 	MenuList,
 	Text,
+	useColorMode,
 	useColorModeValue,
-  theme
+  theme,
+	Button
 } from '@chakra-ui/react';
-// Custom Components
 import PropTypes from 'prop-types';
 import React from 'react';
-// Assets
 import { MdNotificationsNone } from 'react-icons/md';
 import routes from '../../routes';
 import { ColorModeSwitcher } from '../../theme/ColorModeSwitcher';
 import { SearchBar } from '../searchBar';
 import { SidebarResponsive } from '../sidebar';
+import { useHistory } from 'react-router-dom';
 
 export default function SecNavbar(props) {
+	const history = useHistory();
 	const { secondary } = props;
-	// Chakra Color Mode
+	const { colorMode } = useColorMode();
 	const navbarIcon = useColorModeValue('gray.400', 'white');
 	let menuBg = useColorModeValue('white', 'navy.800');
 	const textColor = useColorModeValue('secondaryGray.900', 'white');
@@ -33,6 +34,11 @@ export default function SecNavbar(props) {
 		'14px 17px 40px 4px rgba(112, 144, 176, 0.18)',
 		'14px 17px 40px 4px rgba(112, 144, 176, 0.06)'
 	);
+
+	const handleNavigate = () => {
+    history.push("/admin/profile");
+  };
+
 	return (
 		<Flex
 			w={{ sm: '100%', md: 'auto' }}
@@ -76,15 +82,22 @@ export default function SecNavbar(props) {
 				<MenuButton p="0px">
 					<Avatar
 						_hover={{ cursor: 'pointer' }}
-						color="white"
+						color={colorMode === 'dark' ? '#272829' : '#FFFF'}
 						name="Muhammad Yusuf"
-						bg="#11047A"
+						bg={colorMode === 'dark' ? '#FFFF' : '#272829'}
 						size="sm"
 						w="40px"
 						h="40px"
 					/>
 				</MenuButton>
-				<MenuList boxShadow={shadow} marginLeft="10px" p="0px" mt="10px" borderRadius="20px" bg={menuBg} border="none">
+				<MenuList
+					boxShadow={shadow}
+					marginLeft="10px"
+					p="0px"
+					mt="10px"
+					borderRadius="20px"
+					bg={colorMode === 'dark' ? '#272829' : '#FFFF'}
+					border="none">
 					<Flex w="100%" mb="0px">
 						<Text
 							ps="20px"
@@ -101,7 +114,11 @@ export default function SecNavbar(props) {
 					</Flex>
 					<Flex flexDirection="column" p="10px">
 						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius="8px" px="14px">
-							<Text fontSize="sm">Profile Settings</Text>
+							<Button
+								size='xs'
+								colorScheme={colorMode === 'dark' ? '#272829' : '#FFFF'}
+								onClick={handleNavigate}
+								variant='link'>Profile Settings</Button>
 						</MenuItem>
 						<MenuItem
 							_hover={{ bg: 'none' }}

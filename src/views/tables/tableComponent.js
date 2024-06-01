@@ -1,5 +1,5 @@
 import React from 'react';
-import TableComponent from '../../components/table';
+import TableComponent from '../../components/table/index';
 
 const ViewTableComponent = () => {
   const initialData = [

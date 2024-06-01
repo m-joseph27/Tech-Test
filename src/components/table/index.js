@@ -5,33 +5,41 @@ import { PlusOutlined } from '@ant-design/icons';
 const { Search } = Input;
 
 const TableComponent = ({ columns, initialData }) => {
-  const [dataSource, setDataSource] = useState(initialData);
+  const [dataSource, setDataSource] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [form] = Form.useForm();
 
   useEffect(() => {
-      const storedData = localStorage.getItem('tableData');
-      if (storedData) {
-          setDataSource(JSON.parse(storedData));
-      }
-  }, []);
+    const storedData = localStorage.getItem('tableData');
+    if (storedData) {
+      setDataSource(JSON.parse(storedData));
+    } else {
+      setDataSource(initialData);
+    }
+  }, [initialData]);
 
   useEffect(() => {
+    if (dataSource.length > 0) {
       localStorage.setItem('tableData', JSON.stringify(dataSource));
+    }
   }, [dataSource]);
 
   const handleSearch = (value) => {
-      setSearchText(value);
+    setSearchText(value);
   };
 
   const handleAdd = () => {
-    form.validateFields().then(values => {
-      setDataSource([...dataSource, values]);
-      form.resetFields();
-      setIsModalVisible(false);
-      message.success('Berhasil Menambahkan Data');
-    });
+    form.validateFields()
+      .then((values) => {
+        setDataSource([...dataSource, { ...values, key: Date.now() }]);
+        form.resetFields();
+        setIsModalVisible(false);
+        message.success('Berhasil menambahkan data');
+      })
+      .catch((info) => {
+        message.error('Mohon periksa kesalahan')
+      });
   };
 
   const handleDelete = (key) => {
@@ -40,49 +48,48 @@ const TableComponent = ({ columns, initialData }) => {
     message.success('Berhasil Menghapus Data');
   };
 
-  const filteredData = dataSource.filter(item =>
-      Object.values(item).some(value =>
-          value.toString().toLowerCase().includes(searchText.toLowerCase())
-      )
+  const filteredData = dataSource.filter((item) =>
+    Object.values(item).some((value) =>
+      value.toString().toLowerCase().includes(searchText.toLowerCase())
+    )
   );
 
   const columnsWithActions = [
-      ...columns,
-      {
-          title: 'Action',
-          key: 'action',
-          render: (text, record) => (
-              <Button danger onClick={() => handleDelete(record.key)}>Delete</Button>
-          ),
-      },
+    ...columns,
+    {
+      title: 'Action',
+      key: 'action',
+      render: (text, record) => (
+        <Button danger onClick={() => handleDelete(record.key)}>Delete</Button>
+      ),
+    },
   ];
 
   return (
     <div>
       <Search
-          placeholder="Search in table"
-          onSearch={handleSearch}
-          style={{ marginBottom: 20 }}
+        placeholder="Search in table"
+        onSearch={handleSearch}
+        style={{ marginBottom: 20 }}
       />
       <Button
-          type="primary"
-          onClick={() => setIsModalVisible(true)}
-          icon={<PlusOutlined />}
-          style={{ marginBottom: 20 }}
+        type="primary"
+        onClick={() => setIsModalVisible(true)}
+        icon={<PlusOutlined />}
+        style={{ marginBottom: 20 }}
       >
-          Add Data
+        Add Data
       </Button>
       <Table columns={columnsWithActions} dataSource={filteredData} />
 
       <Modal
-          title="Add Data"
-          visible={isModalVisible}
-          onCancel={() => setIsModalVisible(false)}
-          onOk={handleAdd}
+        title="Add Data"
+        visible={isModalVisible}
+        onCancel={() => {setIsModalVisible(false); form.resetFields()}}
+        onOk={handleAdd}
       >
         <Form form={form} layout="vertical">
-          {columns.map((col) => (
-            console.log(col),
+          {Array.isArray(columns) && columns.map((col) => (
             <Form.Item
               key={col.dataIndex}
               name={col.dataIndex}

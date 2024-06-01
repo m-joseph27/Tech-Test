@@ -17,6 +17,7 @@ import IconBox from "../../components/icons/iconBox";
 import TotalSpent from "./components/totalSpent";
 import WeeklyRevenue from "./components/weeklyRevenue";
 import DailyTraffic from "./components/dailyTraffic";
+import CalenderComponent from "../../components/calendar";
 
 export default function DashboardView() {
   const brandColor = useColorModeValue("orange.500", "white");
@@ -90,8 +91,9 @@ export default function DashboardView() {
         <TotalSpent />
         <WeeklyRevenue />
       </SimpleGrid>
-      <SimpleGrid>
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
         <DailyTraffic />
+        <CalenderComponent />
       </SimpleGrid>
     </Box>
   )

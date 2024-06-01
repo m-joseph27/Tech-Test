@@ -1,5 +1,12 @@
+import {
+  Box,
+  Flex,
+  Icon,
+  Text,
+  useColorMode,
+  useColorModeValue
+} from "@chakra-ui/react";
 import React from "react";
-import { Box, Flex, Icon, Text, useColorModeValue } from "@chakra-ui/react";
 import BarChart from "../../../components/chart/barChart";
 
 import Card from "../../../components/card/index";
@@ -12,6 +19,7 @@ import { RiArrowUpSFill } from "react-icons/ri";
 
 export default function DailyTraffic(props) {
   const { ...rest } = props;
+  const { colorMode } = useColorMode();
 
   const textColor = useColorModeValue("gray.900", "white");
   return (
@@ -19,12 +27,19 @@ export default function DailyTraffic(props) {
       align='center'
       direction='column'
       w='100%'
-      bg="white"
-      borderRadius="15px"
-      p="20px"
+      bg={colorMode === 'dark' ? '#272829' : '#FFFF'}
+      borderRadius='15px'
+      p='20px'
       {...rest}>
-      <Flex justify='space-between' align='start' px='10px' pt='5px'>
-        <Flex flexDirection='column' align='start' me='20px'>
+      <Flex
+        justify='space-between'
+        align='start'
+        px='10px'
+        pt='5px'>
+        <Flex
+          flexDirection='column'
+          align='start'
+          me='20px'>
           <Flex w='100%'>
             <Text
               me='auto'

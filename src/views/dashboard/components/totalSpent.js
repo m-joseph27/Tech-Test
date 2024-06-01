@@ -4,6 +4,7 @@ import {
   Flex,
   Icon,
   Text,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import Card from "../../../components/card/index";
@@ -19,6 +20,7 @@ import {
 
 export default function TotalSpent(props) {
   const { ...rest } = props;
+  const { colorMode } = useColorMode();
 
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const textColorSecondary = useColorModeValue("secondaryGray.600", "white");
@@ -40,11 +42,15 @@ export default function TotalSpent(props) {
       direction='column'
       w='100%'
       mb='0px'
-      bg="white"
-      borderRadius="15px"
-      p="20px"
+      bg={colorMode === 'dark' ? '#272829' : '#FFFF'}
+      borderRadius='15px'
+      p='20px'
       {...rest}>
-      <Flex justify='space-between' ps='0px' pe='20px' pt='5px'>
+      <Flex
+        justify='space-between'
+        ps='0px'
+        pe='20px'
+        pt='5px'>
         <Flex align='center' w='100%'>
           <Button
             bg={boxBg}

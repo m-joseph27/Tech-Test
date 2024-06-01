@@ -2,7 +2,14 @@
 
 body {
   font-family: "DM Sans", sans-serif;
+}
+
+body.chakra-ui-light {
   background: #F3F6FC !important;
+}
+
+body.chakra-ui-dark {
+  background: #040D12 !important;
 }
 
 .text-logo {

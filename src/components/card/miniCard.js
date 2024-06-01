@@ -3,6 +3,7 @@ import {
   Stat,
   StatLabel,
   StatNumber,
+  useColorMode,
   useColorModeValue,
   Text,
 } from "@chakra-ui/react";
@@ -11,11 +12,14 @@ import React from "react";
 
 export default function MiniCard(props) {
   const { content, name, growth, value } = props;
+  const { colorMode } = useColorMode();
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const textColorSecondary = useColorModeValue("gray.500", "white");
 
   return (
-    <Card p='15px' bg="white" borderRadius="15px">
+    <Card p='15px'
+      bg={colorMode === 'dark' ? '#272829' : '#FFFF'}
+      borderRadius='15px'>
       <Flex
         my='auto'
         h='100%'

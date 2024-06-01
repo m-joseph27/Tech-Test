@@ -5,6 +5,7 @@ import {
   Flex,
   Icon,
   Text,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import Card from "../../../components/card/index";
@@ -18,6 +19,7 @@ import { MdShowChart } from "react-icons/md";
 
 export default function WeeklyRevenue(props) {
   const { ...rest } = props;
+  const { colorMode } = useColorMode();
 
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const iconColor = useColorModeValue("orange.500", "white");
@@ -34,12 +36,16 @@ export default function WeeklyRevenue(props) {
     <Card
       align='center'
       direction='column'
-      bg="white"
-      borderRadius="15px"
-      p="20px"
+      bg={colorMode === 'dark' ? '#272829' : '#FFFF'}
+      borderRadius='15px'
+      p='20px'
       w='100%'
       {...rest}>
-      <Flex align='center' w='100%' px='15px' py='10px'>
+      <Flex
+        align='center'
+        w='100%'
+        px='15px'
+        py='10px'>
         <Text
           me='auto'
           color={textColor}

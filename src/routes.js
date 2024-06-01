@@ -9,6 +9,7 @@ import {
 } from "react-icons/md";
 import TableComponent from "./views/tables/tableComponent";
 import DashboardView from "./views/dashboard";
+import ProfileOverview from "./views/profile";
 
 const routes = [
   {
@@ -30,14 +31,7 @@ const routes = [
     path: "/profile",
     layout: "/admin",
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
-    // component: MainDashboard,
-  },
-  {
-    name: "Sign In",
-    path: "/sign-in",
-    layout: "/admin",
-    icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
-    // component: MainDashboard,
+    component: ProfileOverview
   },
 ];
 

@@ -14,6 +14,7 @@ import {
   MdInsertDriveFile,
 } from "react-icons/md";
 import IconBox from "../../components/icons/iconBox";
+import TotalSpent from "./components/totalSpent";
 
 export default function DashboardView() {
   const brandColor = useColorModeValue("orange.500", "white");
@@ -82,6 +83,10 @@ export default function DashboardView() {
           name='Total Projects'
           value='2935'
         />
+      </SimpleGrid>
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
+        <TotalSpent />
+        {/* <WeeklyRevenue /> */}
       </SimpleGrid>
     </Box>
   )

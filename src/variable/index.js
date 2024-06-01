@@ -1,11 +1,11 @@
 export const lineChartDataTotalSpent = [
   {
     name: "Revenue",
-    data: [50, 64, 48, 66, 49, 68],
+    data: [45, 55, 49, 62, 49, 58],
   },
   {
     name: "Profit",
-    data: [30, 40, 24, 46, 20, 46],
+    data: [25, 34, 29, 42, 29, 48],
   },
 ];
 
@@ -20,14 +20,14 @@ export const lineChartOptionsTotalSpent = {
       left: 0,
       blur: 10,
       opacity: 0.1,
-      color: "#4318FF",
+      color: "#FF7D29",
     },
   },
-  colors: ["#4318FF", "#39B8FF"],
+  colors: ["#FF7D29", "#FFBF78"],
   markers: {
     size: 0,
     colors: "white",
-    strokeColors: "#7551FF",
+    strokeColors: "#FF7D29",
     strokeWidth: 3,
     strokeOpacity: 0.9,
     strokeDashArray: 0,
@@ -51,7 +51,7 @@ export const lineChartOptionsTotalSpent = {
   },
   xaxis: {
     type: "numeric",
-    categories: ["SEP", "OCT", "NOV", "DEC", "JAN", "FEB"],
+    categories: ["JAN", "FEB", "MAR", "APR", "MEI", "JUN"],
     labels: {
       style: {
         colors: "#A3AED0",
@@ -75,25 +75,25 @@ export const lineChartOptionsTotalSpent = {
   grid: {
     show: false,
     column: {
-      color: ["#7551FF", "#39B8FF"],
+      color: ["#FF7D29", "#FFBF78"],
       opacity: 0.5,
     },
   },
-  color: ["#7551FF", "#39B8FF"],
+  color: ["#FF7D29", "#FFBF78"],
 };
 
 export const barChartDataConsumption = [
   {
     name: "AYAM GARANG ASAM",
-    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
+    data: [520, 329, 370, 412, 385, 372, 382, 399, 427],
   },
   {
     name: "CHICKEN KATSU",
-    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
+    data: [427, 380, 480, 441, 355, 358, 385, 344, 415],
   },
   {
     name: "SEI AYAM",
-    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
+    data: [452, 371, 338, 391, 335, 365, 387, 334, 388],
   },
 ];
 

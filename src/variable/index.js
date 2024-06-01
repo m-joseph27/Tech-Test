@@ -81,3 +81,104 @@ export const lineChartOptionsTotalSpent = {
   },
   color: ["#7551FF", "#39B8FF"],
 };
+
+export const barChartDataConsumption = [
+  {
+    name: "AYAM GARANG ASAM",
+    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
+  },
+  {
+    name: "CHICKEN KATSU",
+    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
+  },
+  {
+    name: "SEI AYAM",
+    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
+  },
+];
+
+export const barChartOptionsConsumption = {
+  chart: {
+    stacked: true,
+    toolbar: {
+      show: false,
+    },
+  },
+  tooltip: {
+    style: {
+      fontSize: "12px",
+    },
+    onDatasetHover: {
+      style: {
+        fontSize: "12px",
+      },
+    },
+    theme: "dark",
+  },
+  xaxis: {
+    categories: ["17", "18", "19", "20", "21", "22", "23", "24", "25"],
+    show: false,
+    labels: {
+      show: true,
+      style: {
+        colors: "#A3AED0",
+        fontSize: "14px",
+        fontWeight: "500",
+      },
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+  yaxis: {
+    show: false,
+    color: "black",
+    labels: {
+      show: false,
+      style: {
+        colors: "#A3AED0",
+        fontSize: "14px",
+        fontWeight: "500",
+      },
+    },
+  },
+
+  grid: {
+    borderColor: "rgba(163, 174, 208, 0.3)",
+    show: true,
+    yaxis: {
+      lines: {
+        show: false,
+        opacity: 0.5,
+      },
+    },
+    row: {
+      opacity: 0.5,
+    },
+    xaxis: {
+      lines: {
+        show: false,
+      },
+    },
+  },
+  fill: {
+    type: "solid",
+    colors: ["#FF7D29", "#FFBF78", "#FFEEA9"],
+  },
+  legend: {
+    show: false,
+  },
+  colors: ["#FF7D29", "#FFBF78", "#FFEEA9"],
+  dataLabels: {
+    enabled: false,
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 10,
+      columnWidth: "20px",
+    },
+  },
+};

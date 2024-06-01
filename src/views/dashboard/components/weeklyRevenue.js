@@ -67,6 +67,7 @@ export default function WeeklyRevenue(props) {
         <BarChart
           chartData={barChartDataConsumption}
           chartOptions={barChartOptionsConsumption}
+          type={"area"}
         />
       </Box>
     </Card>

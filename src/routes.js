@@ -5,7 +5,6 @@ import {
   MdPieChart,
   MdHome,
   MdPerson,
-  MdLock
 } from "react-icons/md";
 import TableComponent from "./views/tables/tableComponent";
 import DashboardView from "./views/dashboard";

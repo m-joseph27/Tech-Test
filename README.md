@@ -31,4 +31,4 @@ Your app is ready to be deployed!
 
 ## How To Access
 
-Go to `admin-tech-test.netlify.app`
+Go to `https://admin-tech-test.netlify.app`

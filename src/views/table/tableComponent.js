@@ -9,6 +9,7 @@ import {
   useColorMode,
   useToast
 } from '@chakra-ui/react';
+import { MdPersonAdd } from 'react-icons/md';
 
 const ViewTableComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -89,7 +90,8 @@ const ViewTableComponent = () => {
 
   const filteredData = dataSource.filter(item =>
     item.name.toLowerCase().includes(search.toLowerCase()) ||
-    item.address.toLowerCase().includes(search.toLowerCase())
+    item.address.toLowerCase().includes(search.toLowerCase()) ||
+    item.age.includes(search)
   );
 
   return (
@@ -106,7 +108,14 @@ const ViewTableComponent = () => {
         background={colorMode === 'dark' ? '#0F0F0F' : '#FFFF'}
       />
       <Box mt="20px" mb="10px">
-        <Button onClick={onOpen} colorScheme="blue" mb={4}>Add Data</Button>
+        <Button
+          onClick={onOpen}
+          colorScheme="blue"
+          mb={4}
+          leftIcon={<MdPersonAdd />}
+        >
+          Add Profile
+        </Button>
       </Box>
       <Box>
         <ChakraTableComponent data={filteredData} handleDelete={handleDelete} />

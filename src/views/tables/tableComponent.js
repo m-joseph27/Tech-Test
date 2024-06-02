@@ -45,7 +45,7 @@ const ViewTableComponent = () => {
   return (
     <Box
       pt={{ base: '130px', md: '80px', xl: '80px' }}
-      pl={{ base:'0', md: '0', xl: '15px' }}>
+      pl={{ base:'0', md: '15px', xl: '15px' }}>
       <TableComponent columns={columns} initialData={initialData} />
     </Box>
   );

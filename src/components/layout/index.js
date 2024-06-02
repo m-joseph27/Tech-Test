@@ -9,7 +9,6 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 export default function Layout(props) {
   const { ...rest } = props;
-	// states and functions
 	const [ fixed ] = useState(false);
 	const [ toggleSidebar, setToggleSidebar ] = useState(false);
 

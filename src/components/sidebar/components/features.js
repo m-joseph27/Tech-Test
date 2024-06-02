@@ -96,7 +96,6 @@ export default function Features(props) {
                   }>
                   {route.name}
                 </Text>
-                {/* <Box h='36px' w='4px' bg='brand.400' borderRadius='5px' /> */}
               </HStack>
             </Box>
           )}

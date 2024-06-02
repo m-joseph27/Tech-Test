@@ -20,7 +20,8 @@ export const renderTrack = ({ style, ...props }) => {
 export const renderThumb = ({ style, ...props }) => {
   const thumbStyle = {
     borderRadius: 15,
-    background: "rgba(222, 222, 222, .1)",
+    // background: "rgba(222, 222, 222, .1)",
+    background: "#FFA39E",
   };
   return <div style={{ ...style, ...thumbStyle }} {...props} />;
 };

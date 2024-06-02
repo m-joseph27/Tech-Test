@@ -6,7 +6,7 @@ import {
   MdHome,
   MdPerson,
 } from "react-icons/md";
-import TableComponent from "./views/tables/tableComponent";
+import TableComponent from "./views/table/tableComponent";
 import DashboardView from "./views/dashboard";
 import ProfileOverview from "./views/profile";
 

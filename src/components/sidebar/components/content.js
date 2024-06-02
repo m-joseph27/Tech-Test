@@ -1,6 +1,4 @@
-// chakra imports
 import { Box, Flex, Stack } from "@chakra-ui/react";
-//   Custom components
 import Brand from "./brand";
 import Features from "./features";
 import React from "react";

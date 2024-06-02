@@ -1,5 +1,6 @@
 import React from 'react';
 import TableComponent from '../../components/table/index';
+import { Box } from '@chakra-ui/react';
 
 const ViewTableComponent = () => {
   const initialData = [
@@ -42,9 +43,11 @@ const ViewTableComponent = () => {
   ];
 
   return (
-    <div style={{ marginTop: 90 }}>
+    <Box
+      pt={{ base: '130px', md: '80px', xl: '80px' }}
+      pl={{ base:'0', md: '0', xl: '15px' }}>
       <TableComponent columns={columns} initialData={initialData} />
-    </div>
+    </Box>
   );
 };
 

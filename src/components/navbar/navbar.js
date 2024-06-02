@@ -29,7 +29,6 @@ export default function Navbar(props) {
 	let navbarBorder = 'transparent';
 	let secondaryMargin = '0px';
 	let paddingX = '15px';
-	let gap = '0px';
 
 	const changeNavbar = () => {
 		if (window.scrollY > 1) {
@@ -84,11 +83,10 @@ export default function Navbar(props) {
 			<Flex
 				w='100%'
 				flexDirection={{
-					sm: 'column',
+					base: 'column',
 					md: 'row'
 				}}
-				alignItems={{ xl: 'center' }}
-				mb={gap}>
+				alignItems={{ xl: 'center' }}>
 				<Box mb={{ sm: '8px', md: '0px' }}>
 					<Breadcrumb>
 						<BreadcrumbItem color={secondaryText} fontSize='sm' mb='5px'>
@@ -96,14 +94,12 @@ export default function Navbar(props) {
 								Pages
 							</BreadcrumbLink>
 						</BreadcrumbItem>
-
 						<BreadcrumbItem color={secondaryText} fontSize='sm' mb='5px'>
 							<BreadcrumbLink href='#' color={secondaryText}>
 								{brandText}
 							</BreadcrumbLink>
 						</BreadcrumbItem>
 					</Breadcrumb>
-					{/* Here we create navbar brand, based on route name */}
 					<Link
 						color={mainText}
 						href='#'

@@ -9,13 +9,11 @@ import {
 import { SearchIcon } from "@chakra-ui/icons";
 
 export function SearchBar(props) {
-  // Pass the computed styles into the `__css` prop
-  const { variant, background, children, placeholder, borderRadius, ...rest } =
-    props;
-  // Chakra Color Mode
+  const { variant, background, children, placeholder, borderRadius, ...rest } = props;
   const searchIconColor = useColorModeValue("gray.700", "white");
-  const inputBg = useColorModeValue("secondaryGray.300", "navy.900");
+  const inputBg = useColorModeValue("#F3F6FB", "navy.900");
   const inputText = useColorModeValue("gray.700", "gray.100");
+
   return (
     <InputGroup w={{ base: "100%", md: "200px" }} {...rest}>
       <InputLeftElement

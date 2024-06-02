@@ -20,3 +20,15 @@ body.chakra-ui-dark {
   color: #FFB546;
   text-shadow: -4px 5px 6px rgba(169,155,155,0.6);
 }
+
+@media (min-width: 275px) and (max-width: 480px) {
+  .css-892zhy {
+    display: none;
+  }
+
+  .ant-btn-dangerous {
+    border: none;
+    font-size: 12px;
+    margin-right: 30px;
+  }
+}

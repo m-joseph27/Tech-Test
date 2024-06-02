@@ -2,9 +2,9 @@ import React from "react";
 
 import { Icon } from "@chakra-ui/react";
 import {
-  MdPieChart,
   MdHome,
   MdPerson,
+  MdInsertChart,
 } from "react-icons/md";
 import TableComponent from "./views/table/tableComponent";
 import DashboardView from "./views/dashboard";
@@ -22,7 +22,7 @@ const routes = [
     name: "Data Tables",
     path: "/data-table",
     layout: "/admin",
-    icon: <Icon as={MdPieChart} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdInsertChart} width='20px' height='20px' color='inherit' />,
     component: TableComponent
   },
   {

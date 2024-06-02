@@ -13,12 +13,11 @@ body.chakra-ui-dark {
 }
 
 .text-logo {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
   line-height: 54px;
-  margin-bottom: 10px;
-  color: #FFB546;
-  text-shadow: -4px 5px 6px rgba(169,155,155,0.6);
+  margin-bottom: 20px;
+  text-shadow: -4px 5px 6px rgba(149, 146, 146, 0.277);
 }
 
 @media (min-width: 275px) and (max-width: 480px) {

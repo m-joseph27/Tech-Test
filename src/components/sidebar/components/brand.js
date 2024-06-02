@@ -6,7 +6,7 @@ export function SidebarBrand() {
 
   return (
     <Flex align='center' direction='column'>
-      <h1 className="text-logo">ADMIN</h1>
+      <p className="text-logo">ADMIN DASHBOARD</p>
       <HSeparator mb='20px' />
     </Flex>
   );

@@ -29,7 +29,7 @@ export default function Features(props) {
             <Box>
               <HStack
                 spacing={
-                  activeRoute(route.path.toLowerCase()) ? "22px" : "26px"
+                  activeRoute(route.path.toLowerCase()) ? "24px" : "26px"
                 }
                 py='5px'
                 ps='10px'>
@@ -57,8 +57,8 @@ export default function Features(props) {
                     }
                     fontSize={
                       activeRoute(route.path.toLowerCase())
-                        ? "14px"
-                        : "13px"
+                        ? "15px"
+                        : "14px"
                     }
                   >
                     {route.name}

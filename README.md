@@ -2,6 +2,10 @@
 
 In the project directory, you can run:
 
+### `npm i`
+
+Runs the script to install all necessary library
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
@@ -19,13 +23,11 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 ## Tech Stack
-
-`
   - React js
   - Chakra Ui
   - React Apex Chart
   - React Caledar
-`
+
 
 ## How To Access
 

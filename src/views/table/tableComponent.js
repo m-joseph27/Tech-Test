@@ -90,8 +90,8 @@ const ViewTableComponent = () => {
 
   const filteredData = dataSource.filter(item =>
     item.name.toLowerCase().includes(search.toLowerCase()) ||
-    item.address.toLowerCase().includes(search.toLowerCase()) ||
-    item.age.includes(search)
+    item.age.includes(search) ||
+    item.address.toLowerCase().includes(search.toLowerCase())
   );
 
   return (

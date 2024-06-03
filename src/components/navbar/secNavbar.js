@@ -83,7 +83,7 @@ export default function SecNavbar(props) {
 					<Avatar
 						_hover={{ cursor: 'pointer' }}
 						color={colorMode === 'dark' ? '#272829' : '#FFFF'}
-						name="Muhammad Yusuf"
+						name="John Brown"
 						bg={colorMode === 'dark' ? '#FFFF' : '#272829'}
 						size="sm"
 						w="40px"
@@ -109,7 +109,7 @@ export default function SecNavbar(props) {
 							fontSize="sm"
 							fontWeight="700"
 							color={textColor}>
-							👋&nbsp; Hey, Yusuf
+							👋&nbsp; Hey, John
 						</Text>
 					</Flex>
 					<Flex flexDirection="column" p="10px">
